@@ -54,7 +54,7 @@ This is a React + Django app to control Spotify playback. The app includes user 
 
 5. **Configuration:**
 
-   Open `spotify_backend/api/utils.py` as well as `spotify_backend/spotify_backend/settings.py` and replace the placeholder values with your Spotify Client ID and Client Secret:
+   Open `spotify_backend/api/utils.py`, `spotify_backend/spotify_backend/settings.py`, as well as `src/components/SpotifyAuth.jsx` and replace the placeholder values with your Spotify Client ID and Client Secret:
 
    ```python
    SPOTIFY_CLIENT_ID = 'your_spotify_client_id'
