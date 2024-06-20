@@ -1,0 +1,9 @@
+/* src/styles/Portrait.css */
+body {
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

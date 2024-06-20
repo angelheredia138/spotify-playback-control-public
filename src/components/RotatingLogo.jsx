@@ -23,17 +23,24 @@ function RotatingLogo() {
         display="flex"
         justifyContent="center"
         alignItems="center"
+        background="none" // Remove background
       >
         <Image
           src={logo}
           alt="Spotify Logo"
           boxShadow="0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.25)"
           borderRadius="full"
+          background={"#1ED660"}
           width="100px"
-          height="100px"
         />
       </Box>
-      <Text mt={2} fontSize="lg" fontWeight="bold" color="white">
+      <Text
+        mt={2}
+        fontSize="lg"
+        fontWeight="bold"
+        color="black"
+        textAlign="center"
+      >
         Spotify Playback Controller
       </Text>
     </Box>

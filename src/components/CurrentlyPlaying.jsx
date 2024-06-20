@@ -1,7 +1,7 @@
-// src/components/CurrentlyPlaying.jsx
 import React, { useEffect, useState, useRef } from "react";
 import { Box, Text, Image, VStack } from "@chakra-ui/react";
 import ColorThief from "colorthief";
+import "./CurrentlyPlaying.css"; // Ensure this file is imported
 
 function CurrentlyPlaying() {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
@@ -68,6 +68,13 @@ function CurrentlyPlaying() {
     return null;
   }
 
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
+
   return (
     <Box
       bg={bgColor}
@@ -77,6 +84,7 @@ function CurrentlyPlaying() {
       boxShadow="0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.25)"
       width="100%"
       maxWidth="600px"
+      height="195px" // Set a fixed height
     >
       <VStack>
         <img
@@ -99,10 +107,20 @@ function CurrentlyPlaying() {
             borderRadius="md"
           />
         </Box>
-        <Text fontSize="lg" fontWeight="bold">
-          {currentlyPlaying.title}
-        </Text>
-        <Text fontSize="md">{currentlyPlaying.artist}</Text>
+        <Box width="100%" overflow="hidden">
+          <Text
+            fontSize="lg"
+            fontWeight="bold"
+            className="scrolling-title-text"
+          >
+            {truncateText(currentlyPlaying.title, 30)}
+          </Text>
+        </Box>
+        <Box width="100%" overflow="hidden">
+          <Text fontSize="md" className="scrolling-text">
+            {truncateText(currentlyPlaying.artist, 30)}
+          </Text>
+        </Box>
       </VStack>
     </Box>
   );

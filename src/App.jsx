@@ -5,11 +5,18 @@ import RotatingLogo from "./components/RotatingLogo";
 import SpotifyAuth from "./components/SpotifyAuth";
 import CurrentlyPlaying from "./components/CurrentlyPlaying";
 import Logout from "./components/Logout";
-import { Center, VStack, Box } from "@chakra-ui/react";
+import { Center, VStack, HStack, Box } from "@chakra-ui/react";
 import "./styles/GradientBackground.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(
+    window.innerHeight > window.innerWidth
+  );
+
+  const handleOrientationChange = () => {
+    setIsPortrait(window.innerHeight > window.innerWidth);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("spotify_access_token");
@@ -37,25 +44,42 @@ function App() {
     document.body.style.backgroundSize = "600% 600%";
     document.body.style.animation =
       "GradientBackgroundAnimation 16s ease infinite";
+
+    // Add event listener for orientation change
+    window.addEventListener("resize", handleOrientationChange);
+
+    return () => {
+      window.removeEventListener("resize", handleOrientationChange);
+    };
   }, []);
 
   return (
     <Center h="100vh">
-      <VStack spacing={8}>
-        <RotatingLogo />
-        {isAuthenticated ? (
-          <>
+      {isAuthenticated ? (
+        isPortrait ? (
+          <VStack spacing={8}>
+            <RotatingLogo />
             <PlayerControls />
             <VolumeControl />
             <CurrentlyPlaying />
             <Box mt={4}>
               <Logout />
             </Box>
-          </>
+          </VStack>
         ) : (
-          <SpotifyAuth />
-        )}
-      </VStack>
+          <HStack spacing={8} alignItems="center">
+            <RotatingLogo />
+            <VStack spacing={10} alignItems="center">
+              <PlayerControls />
+              <VolumeControl />
+              <CurrentlyPlaying />
+              <Logout />
+            </VStack>
+          </HStack>
+        )
+      ) : (
+        <SpotifyAuth />
+      )}
     </Center>
   );
 }

@@ -1,0 +1,9 @@
+/* src/styles/Landscape.css */
+body {
+  background: linear-gradient(120deg, #89f7fe 0%, #ff66b6 100%);
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
