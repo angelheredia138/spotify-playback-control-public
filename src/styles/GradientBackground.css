@@ -1,0 +1,17 @@
+/* src/styles/GradientBackground.css */
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+@keyframes GradientBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
