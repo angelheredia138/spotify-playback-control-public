@@ -1,6 +1,8 @@
 import React from "react";
+import { Center, VStack, Button, Box } from "@chakra-ui/react";
+import RotatingLogo from "./RotatingLogo";
 
-const CLIENT_ID = "55ea9a06334e4a5788b109027918eaf5";
+const CLIENT_ID = "your_client_id";
 const REDIRECT_URI = "http://localhost:5173/callback";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "code";
@@ -12,9 +14,21 @@ function SpotifyAuth() {
   };
 
   return (
-    <div>
-      <button onClick={handleLogin}>Login to Spotify</button>
-    </div>
+    <Center h="100vh">
+      <VStack spacing={8}>
+        <RotatingLogo />
+        <Box>
+          <Button
+            onClick={handleLogin}
+            colorScheme="teal"
+            size="lg"
+            boxShadow="0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.25)"
+          >
+            Login to Spotify
+          </Button>
+        </Box>
+      </VStack>
+    </Center>
   );
 }
 
