@@ -33,6 +33,17 @@ function App() {
       "linear-gradient(45deg, #cc2b5e, #753a88, #cc2b5e, #753a88, #cc2b5e, #753a88)", // Neon
       "linear-gradient(45deg, #13547a, #80d0c7, #13547a, #80d0c7, #13547a, #80d0c7)", // Aqua
       "linear-gradient(45deg, #ff512f, #f09819, #ff512f, #f09819, #ff512f, #f09819)", // Sunrise
+      "linear-gradient(45deg, #667db6, #0082c8, #0082c8, #667db6, #667db6, #667db6)", // Monochrome
+      "linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e, #ff9a9e)", // Modern
+      "linear-gradient(45deg, #ff9a8b, #ff6a88, #ff6a88, #ff9a8b, #ff9a8b, #ff9a8b)", // Blush
+      "linear-gradient(45deg, #d9a7c7, #fffcdc, #d9a7c7, #fffcdc, #d9a7c7, #fffcdc)", // Pastel
+      "linear-gradient(45deg, #c1dfc4, #deecdd, #c1dfc4, #deecdd, #c1dfc4, #deecdd)", // Calm
+      "linear-gradient(45deg, #f9d423, #ff4e50, #f9d423, #ff4e50, #f9d423, #ff4e50)", // Sunset
+      "linear-gradient(45deg, #b3ffab, #12fff7, #b3ffab, #12fff7, #b3ffab, #12fff7)", // Fresh
+      "linear-gradient(45deg, #ff9a9e, #ffdde1, #ff9a9e, #ffdde1, #ff9a9e, #ffdde1)", // Sweet
+      "linear-gradient(45deg, #fc354c, #0abfbc, #fc354c, #0abfbc, #fc354c, #0abfbc)", // Vivid
+      "linear-gradient(45deg, #fc466b, #3f5efb, #fc466b, #3f5efb, #fc466b, #3f5efb)", // Cool
+      "linear-gradient(45deg, #00d2ff, #3a7bd5, #00d2ff, #3a7bd5, #00d2ff, #3a7bd5)", // Rainbow
     ];
 
     // Select a random gradient
@@ -67,15 +78,17 @@ function App() {
             </Box>
           </VStack>
         ) : (
-          <HStack spacing={8} alignItems="center">
-            <RotatingLogo />
-            <VStack spacing={10} alignItems="center">
-              <PlayerControls />
-              <VolumeControl />
-              <CurrentlyPlaying />
-              <Logout />
-            </VStack>
-          </HStack>
+          <VStack>
+            <HStack spacing={8} alignItems="center">
+              <RotatingLogo />
+              <VStack spacing={10} alignItems="center">
+                <PlayerControls />
+                <VolumeControl />
+                <Logout />
+              </VStack>
+            </HStack>
+            <CurrentlyPlaying />
+          </VStack>
         )
       ) : (
         <SpotifyAuth />
