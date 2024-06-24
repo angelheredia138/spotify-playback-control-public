@@ -16,16 +16,7 @@
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 20s linear infinite;
   width: 100%;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.scrolling-title-text {
-  display: inline-block;
-  animation: scroll 20s linear infinite;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
