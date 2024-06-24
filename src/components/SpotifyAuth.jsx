@@ -14,7 +14,7 @@ function SpotifyAuth() {
   };
 
   return (
-    <Center h="100vh">
+    <Center h="100vh" flexDirection="column">
       <VStack spacing={8}>
         <RotatingLogo />
         <Box>
