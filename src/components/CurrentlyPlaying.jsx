@@ -83,7 +83,7 @@ function CurrentlyPlaying() {
       borderRadius="md"
       boxShadow="0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.25)"
       width="100%"
-      maxWidth="600px"
+      maxWidth="500px"
       height="195px" // Set a fixed height
     >
       <VStack>
@@ -108,11 +108,7 @@ function CurrentlyPlaying() {
           />
         </Box>
         <Box width="100%" overflow="hidden">
-          <Text
-            fontSize="lg"
-            fontWeight="bold"
-            className="scrolling-title-text"
-          >
+          <Text fontSize="lg" fontWeight="bold" className="scrolling-text">
             {truncateText(currentlyPlaying.title, 30)}
           </Text>
         </Box>
