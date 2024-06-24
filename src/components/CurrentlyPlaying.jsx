@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Box, Text, Image, VStack } from "@chakra-ui/react";
 import ColorThief from "colorthief";
 import "./CurrentlyPlaying.css"; // Ensure this file is imported
+import placeholderAlbumCover from "../assets/placeholder albumcover.png";
 
 function CurrentlyPlaying() {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
@@ -22,11 +23,20 @@ function CurrentlyPlaying() {
         .then((data) => {
           if (data.item) {
             const track = {
-              title: data.item.name,
-              artist: data.item.artists.map((artist) => artist.name).join(", "),
-              albumArt: data.item.album.images[0].url,
+              title: data.item.name || "Unknown Title",
+              artist:
+                data.item.artists?.map((artist) => artist.name).join(", ") ||
+                "Unknown Artist",
+              albumArt:
+                data.item.album?.images[0]?.url || placeholderAlbumCover,
             };
             setCurrentlyPlaying(track);
+          } else {
+            setCurrentlyPlaying({
+              title: "Unknown Title",
+              artist: "Unknown Artist",
+              albumArt: placeholderAlbumCover,
+            });
           }
         });
     };
