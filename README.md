@@ -34,13 +34,13 @@ This is a React + Django app to control Spotify playback. The app includes user 
    cd spotify_backend
    python -m venv env
    source env/bin/activate  # On Windows use `env\Scripts\activate`
-   pip install -r requirements.txt
+   pip install django djangorestframework django-cors-headers python-dotenv requests
    ```
 
 3. **Frontend Setup:**
 
    ```bash
-   cd ../spotify_frontend
+   cd ../spotify-playback-control-public 
    npm install
    ```
 
@@ -73,7 +73,7 @@ This is a React + Django app to control Spotify playback. The app includes user 
 2. **Start the frontend development server:**
 
    ```bash
-   cd ../spotify_frontend
+   cd ../spotify-playback-control-public
    npm run dev
    ```
 
