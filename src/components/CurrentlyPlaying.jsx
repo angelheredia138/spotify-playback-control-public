@@ -42,7 +42,7 @@ function CurrentlyPlaying() {
     };
 
     fetchCurrentlyPlaying();
-    const interval = setInterval(fetchCurrentlyPlaying, 5000);
+    const interval = setInterval(fetchCurrentlyPlaying, 1000);
     return () => clearInterval(interval);
   }, []);
 
