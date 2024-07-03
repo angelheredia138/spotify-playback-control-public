@@ -9,24 +9,19 @@ import Logout from "./components/Logout";
 import "./styles/GradientBackground.css";
 
 const gradients = [
-  { name: "Ocean Blue", value: "linear-gradient(45deg, #00c6ff, #0072ff)" },
-  { name: "Purple Dream", value: "linear-gradient(45deg, #a18cd1, #fbc2eb)" },
-  { name: "Mint", value: "linear-gradient(45deg, #00c9ff, #92fe9d)" },
-  { name: "Peach", value: "linear-gradient(45deg, #ff9a8b, #ff6a88)" },
-  { name: "Neon", value: "linear-gradient(45deg, #cc2b5e, #753a88)" },
-  { name: "Aqua", value: "linear-gradient(45deg, #13547a, #80d0c7)" },
-  { name: "Sunrise", value: "linear-gradient(45deg, #ff512f, #f09819)" },
-  { name: "Monochrome", value: "linear-gradient(45deg, #667db6, #0082c8)" },
-  { name: "Modern", value: "linear-gradient(45deg, #ff9a9e, #fad0c4)" },
-  { name: "Blush", value: "linear-gradient(45deg, #ff9a8b, #ff6a88)" },
-  { name: "Pastel", value: "linear-gradient(45deg, #d9a7c7, #fffcdc)" },
-  { name: "Calm", value: "linear-gradient(45deg, #c1dfc4, #deecdd)" },
-  { name: "Sunset", value: "linear-gradient(45deg, #f9d423, #ff4e50)" },
-  { name: "Fresh", value: "linear-gradient(45deg, #b3ffab, #12fff7)" },
-  { name: "Sweet", value: "linear-gradient(45deg, #ff9a9e, #ffdde1)" },
-  { name: "Vivid", value: "linear-gradient(45deg, #fc354c, #0abfbc)" },
-  { name: "Cool", value: "linear-gradient(45deg, #fc466b, #3f5efb)" },
-  { name: "Rainbow", value: "linear-gradient(45deg, #00d2ff, #3a7bd5)" },
+  { name: "Red", value: "linear-gradient(45deg, #ff0000, #8b0000)" },
+  { name: "Orange", value: "linear-gradient(45deg, #ff7f00, #cc5500)" },
+  { name: "Yellow", value: "linear-gradient(45deg, #ffff00, #999900)" },
+  { name: "Green", value: "linear-gradient(45deg, #00ff00, #006400)" },
+  { name: "Blue", value: "linear-gradient(45deg, #0000ff, #00008b)" },
+  { name: "Purple", value: "linear-gradient(45deg, #800080, #4b0082)" },
+  { name: "Night", value: "linear-gradient(45deg, #2c3e50, #1a242f)" },
+  { name: "Day", value: "linear-gradient(45deg, #87CEFA,  #517b96)" },
+  {
+    name: "Rainbow",
+    value:
+      "linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #800080, #ff0000)",
+  },
 ];
 
 function App() {
